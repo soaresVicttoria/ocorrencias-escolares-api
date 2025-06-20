@@ -1,0 +1,39 @@
+import {
+  Controller,
+  HttpRequest,
+  HttpResponse,
+} from "../../interfaces/index.js";
+import Usuario from "../../models/model-usuario.js";
+
+export class AtualizarUsuarioController implements Controller {
+  async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
+    const { id } = httpRequest.params;
+    const { nome, cpf, cargo, senha } = httpRequest.body;
+
+    try {
+      const usuario = await Usuario.findByPk(id);
+      if (!usuario) {
+        return {
+          statusCode: 404,
+          body: { error: "Usuário não encontrado" },
+        };
+      }
+
+      await usuario.update({
+        nome,
+        cpf,
+        cargo,
+        senha,
+      });
+      return {
+        statusCode: 200,
+        body: usuario,
+      };
+    } catch (error: any) {
+      return {
+        statusCode: 500,
+        body: { error: error.message },
+      };
+    }
+  }
+}
