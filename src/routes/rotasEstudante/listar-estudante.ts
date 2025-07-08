@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { ListarEstudanteController } from "../../controllers/controllerEstudante/listar-estudante.js";
+import { ListarEstudanteController } from "../../controllers/controllersEstudante/listar-estudante.js";
 
 export default (router: Router): void => {
   /**

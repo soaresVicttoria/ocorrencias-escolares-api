@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { DeletarResponsavelController } from "../../controllers/controllerResponsavel/deletar-responsavel.js";
+import { DeletarResponsavelController } from "../../controllers/controllersResponsavel/deletar-responsavel.js";
 
 export default (router: Router): void => {
   /**

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { DeletarUsuarioController } from "../../controllers/controllerUsuario/deletar-usuario.js";
+import { DeletarUsuarioController } from "../../controllers/controllersUsuario/deletar-usuario.js";
 
 export default (router: Router): void => {
   /**

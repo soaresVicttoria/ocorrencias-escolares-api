@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { CriarUsuarioController } from "../../controllers/controllerUsuario/criar-usuario.js";
+import { CriarUsuarioController } from "../../controllers/controllersUsuario/criar-usuario.js";
 
 export default (router: Router): void => {
   /**

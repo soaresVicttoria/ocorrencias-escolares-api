@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { ListarUsuarioController } from "../../controllers/controllerUsuario/listar-usuario.js";
+import { ListarUsuarioController } from "../../controllers/controllersUsuario/listar-usuario.js";
 
 export default (router: Router): void => {
   /**

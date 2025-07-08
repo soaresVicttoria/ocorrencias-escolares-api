@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { routerAdapter } from "../../adapters/express-adapter-router.js";
-import { ListarResponsavelController } from "../../controllers/controllerResponsavel/listar-responsavel.js";
+import { ListarResponsavelController } from "../../controllers/controllersResponsavel/listar-responsavel.js";
 
 export default (router: Router): void => {
   /**
