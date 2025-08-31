@@ -9,7 +9,7 @@ export default (controller: Controller) => {
     };
     try {
       const httpResponse = await controller.handle(httpRequest);
-      res.status(httpResponse.status).json(httpResponse.body);
+      res.status(httpResponse.statusCode).json(httpResponse.body);
     } catch (error: any) {
       res.status(500).json({ error: "Erro interno do servidor" });
     }

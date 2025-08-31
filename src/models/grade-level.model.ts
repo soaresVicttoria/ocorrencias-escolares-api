@@ -1,32 +1,24 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../configs/database.config";
 
-export class ResponsibleModel extends Model {
+export class GradeLevelModel extends Model {
   declare id: number;
-  declare name: string;
-  declare phoneNumber: string;
+  declare gradeLevel: string;
 }
 
-ResponsibleModel.init(
+GradeLevelModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
       autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
       allowNull: false,
     },
-    phoneNumber: {
+    gradeLevel: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
   },
-  {
-    sequelize,
-    tableName: "RESPONSIBLES",
-    timestamps: true,
-  }
+  { sequelize, tableName: "GRADE_LEVELS", timestamps: true }
 );

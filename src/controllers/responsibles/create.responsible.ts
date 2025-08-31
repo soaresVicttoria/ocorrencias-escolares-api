@@ -12,23 +12,23 @@ export class CreateResponsibleController implements Controller {
 
       if (!name || !phoneNumber) {
         return {
-          status: 400,
+          statusCode: 400,
           body: { error: "Todos os campos devem ser preenchidos!" },
         };
       }
 
-      const user = await ResponsibleModel.create({
+      const responsible = await ResponsibleModel.create({
         name,
         phoneNumber,
       });
 
       return {
-        status: 201,
-        body: user,
+        statusCode: 201,
+        body: { responsible },
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }

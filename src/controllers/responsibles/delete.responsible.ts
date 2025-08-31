@@ -13,7 +13,7 @@ export class DeleteResponsibleController implements Controller {
 
       if (!responsible) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Responsável não encontrado" },
         };
       }
@@ -21,12 +21,12 @@ export class DeleteResponsibleController implements Controller {
       await responsible.destroy();
 
       return {
-        status: 204,
+        statusCode: 204,
         body: {},
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }

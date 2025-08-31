@@ -1,5 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import { sequelize } from "../setups/database.setup";
+import { sequelize } from "../configs/database.config";
 import { Role } from "../enums/role.enum";
 
 export class UserModel extends Model {
@@ -38,7 +38,7 @@ UserModel.init(
   },
   {
     sequelize,
-    tableName: "users",
+    tableName: "USERS",
     timestamps: true,
   }
 );

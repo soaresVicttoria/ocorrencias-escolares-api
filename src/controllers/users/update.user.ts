@@ -16,7 +16,7 @@ export class UpdateUserController implements Controller {
 
       if (!user) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Usuário não encontrado" },
         };
       }
@@ -28,7 +28,7 @@ export class UpdateUserController implements Controller {
 
       if (usersCpf) {
         return {
-          status: 400,
+          statusCode: 400,
           body: {
             error:
               "O CPF do usuário deve ser único. Este CPF já está cadastrado",
@@ -38,7 +38,7 @@ export class UpdateUserController implements Controller {
 
       if (!Object.values(Role).includes(role)) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Cargo não encontrado" },
         };
       }
@@ -54,12 +54,12 @@ export class UpdateUserController implements Controller {
       });
 
       return {
-        status: 200,
-        body: user,
+        statusCode: 200,
+        body: { user },
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }

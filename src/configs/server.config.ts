@@ -1,6 +1,6 @@
 import express from "express";
-import setupMiddlewares from "./middleware.setup";
-import setupRoutes from "./route.setup";
+import setupMiddlewares from "./middleware.config";
+import setupRoutes from "./route.config";
 
 export const server = express();
 

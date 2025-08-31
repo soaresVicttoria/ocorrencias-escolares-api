@@ -2,7 +2,7 @@ import { Router } from "express";
 import { CreateResponsibleController } from "../controllers/responsibles/create.responsible";
 import { DeleteResponsibleController } from "../controllers/responsibles/delete.responsible";
 import { ListResponsiblesController } from "../controllers/responsibles/list-all.responsible";
-import { ListResponsibleController } from "../controllers/responsibles/list-by-id.responsible";
+import { GetResponsibleController } from "../controllers/responsibles/get-by-id.responsible";
 import { UpdateResponsibleController } from "../controllers/responsibles/update.responsible";
 import routeAdapter from "../adapters/route.adapter";
 
@@ -10,7 +10,7 @@ export default (router: Router): void => {
   router.get("/responsibles", routeAdapter(new ListResponsiblesController()));
   router.get(
     "/responsibles/:id",
-    routeAdapter(new ListResponsibleController())
+    routeAdapter(new GetResponsibleController())
   );
   router.post("/responsibles", routeAdapter(new CreateResponsibleController()));
   router.put(

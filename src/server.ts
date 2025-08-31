@@ -1,5 +1,5 @@
-import { sequelize } from "./setups/database.setup";
-import { server } from "./setups/server.setup";
+import { sequelize } from "./configs/database.config";
+import { server } from "./configs/server.config";
 
 const startServer = (port: number) => {
   server

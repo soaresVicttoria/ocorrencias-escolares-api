@@ -3,23 +3,24 @@ import {
   HttpRequest,
   HttpResponse,
 } from "../../interfaces/index.interface";
-import { UserModel } from "../../models/user.model";
+import { ResponsibleModel } from "../../models/responsible.model";
 
-export class ListUsersController implements Controller {
+export class GetResponsibleController implements Controller {
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const users = await UserModel.findAll();
+      const { id } = httpRequest.params;
+      const responsible = await ResponsibleModel.findByPk(id);
 
-      if (users.length === 0) {
+      if (!responsible) {
         return {
           statusCode: 404,
-          body: { error: "Usuários não encontrados" },
+          body: { error: "Responsável não encontrados" },
         };
       }
 
       return {
         statusCode: 200,
-        body: { users },
+        body: { responsible },
       };
     } catch (error: any) {
       return {

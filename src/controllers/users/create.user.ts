@@ -14,7 +14,7 @@ export class CreateUserController implements Controller {
 
       if (!name || !cpf || !role || !password) {
         return {
-          status: 400,
+          statusCode: 400,
           body: { error: "Todos os campos devem ser preenchidos" },
         };
       }
@@ -23,7 +23,7 @@ export class CreateUserController implements Controller {
 
       if (usersCpf) {
         return {
-          status: 400,
+          statusCode: 400,
           body: {
             error:
               "O CPF do usuário deve ser único. Este CPF já está cadastrado",
@@ -33,7 +33,7 @@ export class CreateUserController implements Controller {
 
       if (!Object.values(Role).includes(role)) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Cargo não encontrado" },
         };
       }
@@ -48,12 +48,12 @@ export class CreateUserController implements Controller {
       });
 
       return {
-        status: 201,
-        body: user,
+        statusCode: 201,
+        body: { user },
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }

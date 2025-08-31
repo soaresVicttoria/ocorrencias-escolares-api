@@ -3,23 +3,23 @@ import {
   HttpRequest,
   HttpResponse,
 } from "../../interfaces/index.interface";
-import { UserModel } from "../../models/user.model";
+import { GradeLevelModel } from "../../models/grade-level.model";
 
-export class ListUsersController implements Controller {
+export class ListGradeLevelsController implements Controller {
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const users = await UserModel.findAll();
+      const gradeLevels = await GradeLevelModel.findAll();
 
-      if (users.length === 0) {
+      if (!gradeLevels) {
         return {
           statusCode: 404,
-          body: { error: "Usuários não encontrados" },
+          body: { error: "Series não encontradas" },
         };
       }
 
       return {
         statusCode: 200,
-        body: { users },
+        body: { gradeLevels },
       };
     } catch (error: any) {
       return {

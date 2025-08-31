@@ -13,7 +13,7 @@ export class UpdateResponsibleController implements Controller {
 
       if (!responsible) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Responsável não encontrado" },
         };
       }
@@ -26,12 +26,12 @@ export class UpdateResponsibleController implements Controller {
       });
 
       return {
-        status: 200,
-        body: responsible,
+        statusCode: 200,
+        body: { responsible },
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }

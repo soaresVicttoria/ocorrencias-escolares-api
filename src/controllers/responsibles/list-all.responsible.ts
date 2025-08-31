@@ -12,18 +12,18 @@ export class ListResponsiblesController implements Controller {
 
       if (responsibles.length === 0) {
         return {
-          status: 404,
+          statusCode: 404,
           body: { error: "Responsáveis não encontrados" },
         };
       }
 
       return {
-        status: 200,
-        body: responsibles,
+        statusCode: 200,
+        body: { responsibles },
       };
     } catch (error: any) {
       return {
-        status: 500,
+        statusCode: 500,
         body: { error: error.message },
       };
     }
