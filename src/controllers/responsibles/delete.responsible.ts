@@ -14,7 +14,7 @@ export class DeleteResponsibleController implements Controller {
       if (!responsible) {
         return {
           statusCode: 404,
-          body: { error: "Responsável não encontrado" },
+          body: { error: "Responsáveis não encontrado" },
         };
       }
 

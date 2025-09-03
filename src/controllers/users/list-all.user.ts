@@ -13,7 +13,7 @@ export class ListUsersController implements Controller {
       if (users.length === 0) {
         return {
           statusCode: 404,
-          body: { error: "Usuários não encontrados" },
+          body: { error: "Os usuários não foram encontrados" },
         };
       }
 

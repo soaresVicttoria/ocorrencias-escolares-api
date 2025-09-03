@@ -4,7 +4,7 @@ import {
   HttpResponse,
 } from "../../interfaces/index.interface";
 import { UserModel } from "../../models/user.model";
-import { Role } from "../../enums/role.enum";
+import { Roles } from "../../enums/roles.enum";
 import { hash } from "bcrypt";
 
 export class CreateUserController implements Controller {
@@ -31,7 +31,7 @@ export class CreateUserController implements Controller {
         };
       }
 
-      if (!Object.values(Role).includes(role)) {
+      if (!Object.values(Roles).includes(role)) {
         return {
           statusCode: 404,
           body: { error: "Cargo não encontrado" },

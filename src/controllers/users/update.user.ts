@@ -1,4 +1,4 @@
-import { Role } from "../../enums/role.enum";
+import { Roles } from "../../enums/roles.enum";
 import {
   Controller,
   HttpRequest,
@@ -36,7 +36,7 @@ export class UpdateUserController implements Controller {
         };
       }
 
-      if (!Object.values(Role).includes(role)) {
+      if (!Object.values(Roles).includes(role)) {
         return {
           statusCode: 404,
           body: { error: "Cargo não encontrado" },

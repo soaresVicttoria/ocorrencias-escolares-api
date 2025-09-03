@@ -3,23 +3,26 @@ import {
   HttpRequest,
   HttpResponse,
 } from "../../interfaces/index.interface";
-import { GradeLevelModel } from "../../models/grade-level.model";
+import { ClassModel } from "../../models/class.model";
 
-export class ListGradeLevelsController implements Controller {
+export class DeleteClassController implements Controller {
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const gradeLevels = await GradeLevelModel.findAll();
+      const { id } = httpRequest.params;
+      const foundClass = await ClassModel.findByPk(id);
 
-      if (!gradeLevels) {
+      if (!foundClass) {
         return {
           statusCode: 404,
-          body: { error: "Series não encontradas" },
+          body: { error: "Turma não encontrada" },
         };
       }
 
+      await foundClass.destroy();
+
       return {
-        statusCode: 200,
-        body: { gradeLevels },
+        statusCode: 204,
+        body: {},
       };
     } catch (error: any) {
       return {

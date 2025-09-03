@@ -26,7 +26,7 @@ ResponsibleModel.init(
   },
   {
     sequelize,
-    tableName: "RESPONSIBLES",
+    tableName: "responsible",
     timestamps: true,
   }
 );

@@ -1,5 +1,6 @@
 import { sequelize } from "./configs/database.config";
 import { server } from "./configs/server.config";
+// import "./models/associations.model";
 
 const startServer = (port: number) => {
   server

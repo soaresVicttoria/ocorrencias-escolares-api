@@ -13,7 +13,7 @@ export class ListResponsiblesController implements Controller {
       if (responsibles.length === 0) {
         return {
           statusCode: 404,
-          body: { error: "Responsáveis não encontrados" },
+          body: { error: "Os responsáveis não foram encontrados" },
         };
       }
 

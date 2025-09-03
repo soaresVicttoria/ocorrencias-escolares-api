@@ -1,12 +1,12 @@
 import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../configs/database.config";
-import { Role } from "../enums/role.enum";
+import { Roles } from "../enums/roles.enum";
 
 export class UserModel extends Model {
   declare id: number;
   declare name: string;
   declare cpf: string;
-  declare role: Role;
+  declare role: Roles;
   declare password: string;
 }
 
@@ -38,7 +38,7 @@ UserModel.init(
   },
   {
     sequelize,
-    tableName: "USERS",
+    tableName: "user",
     timestamps: true,
   }
 );

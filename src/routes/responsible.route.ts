@@ -8,10 +8,7 @@ import routeAdapter from "../adapters/route.adapter";
 
 export default (router: Router): void => {
   router.get("/responsibles", routeAdapter(new ListResponsiblesController()));
-  router.get(
-    "/responsibles/:id",
-    routeAdapter(new GetResponsibleController())
-  );
+  router.get("/responsibles/:id", routeAdapter(new GetResponsibleController()));
   router.post("/responsibles", routeAdapter(new CreateResponsibleController()));
   router.put(
     "/responsibles/:id",

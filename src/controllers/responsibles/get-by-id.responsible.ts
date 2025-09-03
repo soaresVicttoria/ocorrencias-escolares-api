@@ -14,7 +14,7 @@ export class GetResponsibleController implements Controller {
       if (!responsible) {
         return {
           statusCode: 404,
-          body: { error: "Responsável não encontrados" },
+          body: { error: "Responsável não encontrado" },
         };
       }
 
